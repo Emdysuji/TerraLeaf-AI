@@ -7,20 +7,23 @@ Plant Disease Classification is a machine learning project that leverages indivi
 # Why It’s Important 🌍
 Plant diseases can have devastating impacts on crop yields and food security. By using deep learning to classify diseases early, this project aims to:
 
-. Help minimize crop losses.
-. Enable precise disease management.
-. Reduce the need for chemical treatments, promoting sustainable agriculture.
+- Help minimize crop losses.
+- Enable precise disease management.
+- Reduce the need for chemical treatments, promoting sustainable agriculture.
 
 # Key Features
-. Multi-Model Structure: Each plant species has its own dedicated model, fine-tuned to its unique disease characteristics.
-High Disease Detection Accuracy: Each model classifies between 3 to 6 diseases specific to its plant, trained with thousands of labeled images for robust detection.
-Scalable Design: The architecture allows for easy addition of new plant models or diseases as they become relevant.
-Real-Time Results: Efficient deployment on [insert platform, e.g., web, mobile] for immediate feedback to users.
-Supported Plants and Diseases
-Plant Species	Number of Diseases	Example Diseases
-Plant 1	3	Disease A, Disease B, Disease C
-Plant 2	5	Disease D, Disease E, Disease F, Disease G, Disease H
-...	...	...
+- Multi-Model Structure: Each plant species has its own dedicated model, fine-tuned to its unique disease characteristics.
+- High Disease Detection Accuracy: Each model classifies between 3 to 6 diseases specific to its plant, trained with thousands of labeled images for robust detection.
+- Scalable Design: The architecture allows for easy addition of new plant models or diseases as they become relevant.
+- Real-Time Results: Efficient deployment on [insert platform, e.g., web, mobile] for immediate feedback to users.
+  
+# Supported Plants and Diseases
+Plant Species |	Number of Diseases |	Example Diseases |
+--------------|--------------------|------------------|
+Apple         |	7                  | alternaria leaf spot, black rot, brown spot, gray spot, healthy, rust, scab|
+Banana        |	7                  | Bract Mosaic Virus, Fungal Infection, Healthy, Insect Damage, Moko Disease, Panama Disease, Sigatoka Disease|
+Beans         | 3                  | angular leaf spot, bean rust, healthy|
+
 Plant 10	4	Disease X, Disease Y, Disease Z, Disease W
 Note: The full list of plants and diseases can be found in the data/plant_disease_info.md file.
 
