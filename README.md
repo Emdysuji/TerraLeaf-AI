@@ -23,14 +23,35 @@ Plant Species |	Number of Diseases |	Example Diseases |
 Apple         |	7                  | alternaria leaf spot, black rot, brown spot, gray spot, healthy, rust, scab|
 Banana        |	7                  | Bract Mosaic Virus, Fungal Infection, Healthy, Insect Damage, Moko Disease, Panama Disease, Sigatoka Disease|
 Beans         | 3                  | angular leaf spot, bean rust, healthy|
+Cassava       |	5                  | bacterial blight, brown streak disease, green mottle, healthy, mosaic disease|
+Grape         |	4                  | Black rot, Esca (Black Measles), Leaf blight (Isariopsis Leaf Spot), healthy|
+Groundnut     | 5                  | early leaf spot, healthy leaf, late leaf spot, nutrition deficiency, rust|
+Maize(Corn)   | 4                  | Cercospora leaf spot Gray leaf spot, Common rust, Northern Leaf Blight, healthy|
+Tomato        |	10                 | Bacterial spot, Early blight, Late blight, Leaf Mold, Septoria leaf spot, Spider mites Two-spotted spider mite, Target Spot, Yellow Leaf Curl Virus, Tomato mosaic virus, healthy|
+Potato        | 3                  | Early_blight, Late blight, healthy|
+Rice          | 4                  | Rice Brown spot, Rice Healthy, Rice Hispa, Rice Leaf blast|
 
-Plant 10	4	Disease X, Disease Y, Disease Z, Disease W
+
 Note: The full list of plants and diseases can be found in the data/plant_disease_info.md file.
 
-Model Architecture and Training
+# Model Architecture and Training
 Each model in this project is built using a deep convolutional neural network (CNN) architecture, optimized for image classification in TensorFlow. The models were trained using a dataset of [insert number] images, sourced from publicly available datasets and labeled with expert assistance.
 
-Architecture Highlights
-CNN Layers: Includes [number] layers optimized for feature extraction.
-Data Augmentation: Used to enhance model generalization and performance on unseen data.
-Custom Loss Function: Tailored for multi-class disease classification.
+- Architecture Highlights
+- CNN Layers: Includes [number] layers optimized for feature extraction.
+- Data Augmentation: Used to enhance model generalization and performance on unseen data.
+- Custom Loss Function: Tailored for multi-class disease classification.
+
+# Installation
+To get started with this project locally, follow these steps:
+
+- 1. Clone the repository:
+git clone https://github.com/yourusername/PlantDiseaseClassification.git
+cd PlantDiseaseClassification
+Install dependencies:
+
+bash
+Copy
+Edit
+pip install -r requirements.txt
+Download Model Weights: Download pre-trained weights from [link to weights] and place them in the models/ directory.
