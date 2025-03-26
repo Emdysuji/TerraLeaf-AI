@@ -45,13 +45,82 @@ Each model in this project is built using a deep convolutional neural network (C
 # Installation
 To get started with this project locally, follow these steps:
 
-- 1. Clone the repository:
-git clone https://github.com/yourusername/PlantDiseaseClassification.git
-cd PlantDiseaseClassification
-Install dependencies:
+1. Clone the repository:
+   git clone https://github.com/yourusername/PlantDiseaseClassification.git
+   cd PlantDiseaseClassification
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Download Model Weights: Download pre-trained weights from [link to weights] and place them in the models/ directory.
+2. Install dependencies:
+   pip install -r requirements.txt
+
+# Usage
+Running a Prediction
+
+1. Start the API
+   Run the Flask application with:
+   `python api.py`
+   By default, the API runs on http://127.0.0.1:5000/
+
+3. Sending a Prediction Request
+   Use a tool like Postman or curl to send a POST request to the /predict endpoint.
+
+Request Format:
+
+URL: http://127.0.0.1:5000/predict
+
+Method: POST
+
+Form Data:
+
+plant: The plant type (e.g., "apple", "banana", etc.).
+
+file: The image file of the plant leaf.
+
+Example Using curl:
+
+curl -X POST "http://127.0.0.1:5000/predict" \
+     -F "plant=apple" \
+     -F "file=@path/to/image.jpg"
+
+Example Response:
+
+{
+    "plant": "apple",
+    "predictions": "Apple___black_rot",
+    "confidence": 0.95
+}
+
+Error Handling
+
+The API returns error messages in JSON format if there is an issue with the request:
+
+Invalid plant type:
+
+{"error": "Invalid plant type. Available options: [list of plants]"}
+
+No file provided:
+
+{"error": "No file provided."}
+
+Processing error:
+
+{"error": "Error details..."}
+
+Deployment
+
+To deploy this API, you can:
+
+Use a cloud service like AWS, GCP, or Azure.
+
+Deploy with a web server like gunicorn:
+
+gunicorn -w 4 -b 0.0.0.0:5000 api:app
+
+Containerize with Docker:
+
+FROM python:3.9
+WORKDIR /app
+COPY . .
+RUN pip install flask tensorflow pillow numpy
+CMD ["python", "api.py"]
+
+License
