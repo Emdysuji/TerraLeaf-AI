@@ -60,67 +60,61 @@ Running a Prediction
    `python api.py`
    By default, the API runs on http://127.0.0.1:5000/
 
-3. Sending a Prediction Request
-   Use a tool like Postman or curl to send a POST request to the /predict endpoint.
+2. Sending a Prediction Request
+   Use a tool like Postman or curl to send a POST request to the `/predict` endpoint.
+   Request Format:
+   - URL: `http://127.0.0.1:5000/predict`
+   - Method: POST
+   - Form Data:
+      - plant: The plant type (e.g., "apple", "banana", etc.).
+      - file: The image file of the plant leaf.
 
-Request Format:
-
-URL: http://127.0.0.1:5000/predict
-
-Method: POST
-
-Form Data:
-
-plant: The plant type (e.g., "apple", "banana", etc.).
-
-file: The image file of the plant leaf.
-
-Example Using curl:
-
-curl -X POST "http://127.0.0.1:5000/predict" \
+**Example Using curl:**
+```json
+`curl -X POST "http://127.0.0.1:5000/predict" \
      -F "plant=apple" \
-     -F "file=@path/to/image.jpg"
+     -F "file=@path/to/image.jpg"`
+```
 
-Example Response:
+**Example Response:**
 
+```json
 {
     "plant": "apple",
     "predictions": "Apple___black_rot",
     "confidence": 0.95
 }
+```
 
-Error Handling
+**Error Handling**
 
 The API returns error messages in JSON format if there is an issue with the request:
 
-Invalid plant type:
+- Invalid plant type:
+  - ```json{"error": "Invalid plant type. Available options: [list of plants]"}```
 
-{"error": "Invalid plant type. Available options: [list of plants]"}
+- No file provided:
+  - ```json{"error": "No file provided."}```
 
-No file provided:
+- Processing error:
+  - ```json{"error": "Error details..."}```
 
-{"error": "No file provided."}
-
-Processing error:
-
-{"error": "Error details..."}
-
-Deployment
-
+**Deployment**
 To deploy this API, you can:
 
-Use a cloud service like AWS, GCP, or Azure.
+- Use a cloud service like AWS, GCP, or Azure.
+- Deploy with a web server like ` gunicorn`:
+    - ```json gunicorn -w 4 -b 0.0.0.0:5000 api:app```
 
-Deploy with a web server like gunicorn:
-
-gunicorn -w 4 -b 0.0.0.0:5000 api:app
-
-Containerize with Docker:
-
+- Containerize with Docker:
+```json
+{
 FROM python:3.9
 WORKDIR /app
 COPY . .
 RUN pip install flask tensorflow pillow numpy
 CMD ["python", "api.py"]
+}
+```
 
 License
