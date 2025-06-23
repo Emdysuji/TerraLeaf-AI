@@ -31,7 +31,22 @@ Tomato        |	10                 | Bacterial spot, Early blight, Late blight, 
 Potato        | 3                  | Early_blight, Late blight, healthy|
 Rice          | 4                  | Rice Brown spot, Rice Healthy, Rice Hispa, Rice Leaf blast|
 
+ # Plants diseases Dataset Sauce
 
+Plant Species |	Sauce                                                                          |             
+--------------|--------------------------------------------------------------------------------|
+Apple         |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
+Banana        |	https://www.kaggle.com/datasets/sujaykapadnis/banana-disease-recognition-dataset, https://www.kaggle.com/datasets/armaanoajay/bananalsd| 
+Beans         | https://www.kaggle.com/datasets/therealoise/bean-disease-dataset| 
+Cassava       |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
+Grape         |	https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset| 
+Groundnut     | 5                  |
+Maize(Corn)   | 4                  |
+Tomato        |	10                 | 
+Potato        | 3                  |
+Rice          | 4                  | 
+
+ 
 Note: The full list of plants and diseases can be found in the data/plant_disease_info.md file.
 
 # Model Architecture and Training
