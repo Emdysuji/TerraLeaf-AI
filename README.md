@@ -46,12 +46,29 @@ Each model in this project is built using a deep convolutional neural network (C
 To get started with this project locally, follow these steps:
 
 1. Clone the repository:
+   ```
    git clone https://github.com/yourusername/PlantDiseaseClassification.git
    cd PlantDiseaseClassification
+   ```
 
 2. Install dependencies:
+   ```
    pip install -r requirements.txt
+   ```
 
+# Performance
+| Plant  | 	Accuracy | Precision      | Recall | F1 Score |
+|--------|-----------|----------------|--------|----------|
+| Apple  | 98.19%     | 98.2%          | 98.19%  | 98.18% |
+| Banana | 94%        | 94%            | 94%     | 94%    |
+| Beans  | 91.4%      | 91.5%          | 91.4%   | 91.4%  |
+| Cassava| 85%        | 85%            | 85%     | 85%    |
+| Grape  | 98.66%     | 98.68%         | 98.66%  | 98.65% |
+| Groundnut| 86%      | 86%            | 86%     | 86%    |
+| Maize(Corn)| 93.75% | 93.93%         | 93.75%  | 93.81% |
+| Tomato   | 94%      | 94.7%          | 94%     | 94.19% |
+| Potato   | 97.6%    | 97.7%          | 97.6%   | 97.6%  |
+| Rice     | 81.25%   | 81.8%          | 81.25%  | 81%    |
 # Usage
 Running a Prediction
 
@@ -98,6 +115,7 @@ The API returns error messages in JSON format if there is an issue with the requ
 
 - Processing error:
   - ```json{"error": "Error details..."}```
+
 
 **Deployment**
 To deploy this API, you can:
