@@ -36,15 +36,15 @@ Rice          | 4                  | Rice Brown spot, Rice Healthy, Rice Hispa, 
 Plant Species |	Sauce                                                                          |             
 --------------|--------------------------------------------------------------------------------|
 Apple         |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
-Banana        |	https://www.kaggle.com/datasets/sujaykapadnis/banana-disease-recognition-dataset, https://www.kaggle.com/datasets/armaanoajay/bananalsd| 
+Banana        |	https://www.kaggle.com/datasets/sujaykapadnis/banana-disease-recognition-dataset, &, https://www.kaggle.com/datasets/armaanoajay/bananalsd| 
 Beans         | https://www.kaggle.com/datasets/therealoise/bean-disease-dataset| 
 Cassava       |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
 Grape         |	https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset| 
-Groundnut     | 5                  |
-Maize(Corn)   | 4                  |
-Tomato        |	10                 | 
-Potato        | 3                  |
-Rice          | 4                  | 
+Groundnut     | https://www.kaggle.com/datasets/warcoder/groundnut-plant-leaf-data|
+Maize(Corn)   | https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset|
+Tomato        |	https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset| 
+Potato        | https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset|
+Rice          | https://www.kaggle.com/datasets/nizorogbezuode/rice-leaf-images| 
 
  
 Note: The full list of plants and diseases can be found in the data/plant_disease_info.md file.
@@ -150,4 +150,13 @@ CMD ["python", "api.py"]
 }
 ```
 
-License
+# 🙌 Author
+*Michael-David Osuji*
+- 📍 Nigeria
+- 💼 Machine Learning & Automation Enthusiast
+- 🌐 LinkedIn (www.linkedin.com/in/michael-daivd-osuji-b1811a208)
+- 📬 Feel free to connect or contribute!
+
+# ⭐️ Show Your Support
+If you like this project, give it a ⭐️ on GitHub and share it with others!
+
