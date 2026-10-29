@@ -1,162 +1,151 @@
-# TerraLeaf-AI
- Deep learning-based plant disease classification system with specialized models for 10 plant species, identifying 3-6 diseases per plant. Aimed at enhancing agricultural productivity and sustainability.
+<div align="center">
 
-# Overview
-Plant Disease Classification is a machine learning project that leverages individual, plant-specific models to accurately diagnose diseases across 10 different plant species. Each model is uniquely designed and trained to classify 3–6 diseases for the plant it serves, providing a specialized, high-accuracy solution to aid farmers, botanists, and agronomists in disease identification and early intervention.
+# 🌿 TerraLeaf-AI
 
-# Why It’s Important 🌍
-Plant diseases can have devastating impacts on crop yields and food security. By using deep learning to classify diseases early, this project aims to:
+**Plant disease classification with a dedicated deep-learning model for each of 10 crops.**
 
-- Help minimize crop losses.
-- Enable precise disease management.
-- Reduce the need for chemical treatments, promoting sustainable agriculture.
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white)
+![Flask](https://img.shields.io/badge/API-Flask-000000?logo=flask&logoColor=white)
+![Crops](https://img.shields.io/badge/Crops-10-2ea44f)
 
-# Key Features
-- Multi-Model Structure: Each plant species has its own dedicated model, fine-tuned to its unique disease characteristics.
-- High Disease Detection Accuracy: Each model classifies between 3 to 6 diseases specific to its plant, trained with thousands of labeled images for robust detection.
-- Scalable Design: The architecture allows for easy addition of new plant models or diseases as they become relevant.
-- Real-Time Results: Efficient deployment on [insert platform, e.g., web, mobile] for immediate feedback to users.
-  
-# Supported Plants and Diseases
-Plant Species |	Number of Diseases |	Example Diseases |
---------------|--------------------|------------------|
-Apple         |	7                  | alternaria leaf spot, black rot, brown spot, gray spot, healthy, rust, scab|
-Banana        |	7                  | Bract Mosaic Virus, Fungal Infection, Healthy, Insect Damage, Moko Disease, Panama Disease, Sigatoka Disease|
-Beans         | 3                  | angular leaf spot, bean rust, healthy|
-Cassava       |	5                  | bacterial blight, brown streak disease, green mottle, healthy, mosaic disease|
-Grape         |	4                  | Black rot, Esca (Black Measles), Leaf blight (Isariopsis Leaf Spot), healthy|
-Groundnut     | 5                  | early leaf spot, healthy leaf, late leaf spot, nutrition deficiency, rust|
-Maize(Corn)   | 4                  | Cercospora leaf spot Gray leaf spot, Common rust, Northern Leaf Blight, healthy|
-Tomato        |	10                 | Bacterial spot, Early blight, Late blight, Leaf Mold, Septoria leaf spot, Spider mites Two-spotted spider mite, Target Spot, Yellow Leaf Curl Virus, Tomato mosaic virus, healthy|
-Potato        | 3                  | Early_blight, Late blight, healthy|
-Rice          | 4                  | Rice Brown spot, Rice Healthy, Rice Hispa, Rice Leaf blast|
+</div>
 
- # Plants diseases Dataset Sauce
+---
 
-Plant Species |	Sauce                                                                          |             
---------------|--------------------------------------------------------------------------------|
-Apple         |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
-Banana        |	https://www.kaggle.com/datasets/sujaykapadnis/banana-disease-recognition-dataset, &, https://www.kaggle.com/datasets/armaanoajay/bananalsd| 
-Beans         | https://www.kaggle.com/datasets/therealoise/bean-disease-dataset| 
-Cassava       |	https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset| 
-Grape         |	https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset| 
-Groundnut     | https://www.kaggle.com/datasets/warcoder/groundnut-plant-leaf-data|
-Maize(Corn)   | https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset|
-Tomato        |	https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset| 
-Potato        | https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset|
-Rice          | https://www.kaggle.com/datasets/nizorogbezuode/rice-leaf-images| 
+## 🔍 Overview
 
- 
-Note: The full list of plants and diseases can be found in the data/plant_disease_info.md file.
+TerraLeaf-AI diagnoses leaf diseases across **10 plant species**. Instead of one big model, each plant has its **own specialized CNN**, trained on that crop's diseases (3 to 10 classes per plant, including a *healthy* class). The aim is to give farmers, botanists and agronomists a fast, accurate first diagnosis.
 
-# Model Architecture and Training
-Each model in this project is built using a deep convolutional neural network (CNN) architecture, optimized for image classification in TensorFlow. The models were trained using a dataset of [insert number] images, sourced from publicly available datasets and labeled with expert assistance.
+## 🌍 Why it matters
 
-- Architecture Highlights
-- CNN Layers: Includes [number] layers optimized for feature extraction.
-- Data Augmentation: Used to enhance model generalization and performance on unseen data.
-- Custom Loss Function: Tailored for multi-class disease classification.
+Plant diseases can devastate yields and food security. Catching them early helps to:
 
-# Installation
-To get started with this project locally, follow these steps:
+- Minimize crop losses
+- Enable precise disease management
+- Reduce unnecessary chemical treatment, supporting sustainable agriculture
 
-1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/PlantDiseaseClassification.git
-   cd PlantDiseaseClassification
-   ```
+## ✨ Key features
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+- **Multi-model design:** one dedicated model per plant, tuned to its own diseases
+- **Simple prediction API:** send a leaf image and the plant type, get a diagnosis and a confidence score
+- **Scalable:** new plants or diseases can be added as separate models
+- **Data augmentation** to improve generalization on unseen images
 
-# Performance
-| Plant  | 	Accuracy | Precision      | Recall | F1 Score |
-|--------|-----------|----------------|--------|----------|
-| Apple  | 98.19%     | 98.2%          | 98.19%  | 98.18% |
-| Banana | 94%        | 94%            | 94%     | 94%    |
-| Beans  | 91.4%      | 91.5%          | 91.4%   | 91.4%  |
-| Cassava| 85%        | 85%            | 85%     | 85%    |
-| Grape  | 98.66%     | 98.68%         | 98.66%  | 98.65% |
-| Groundnut| 86%      | 86%            | 86%     | 86%    |
-| Maize(Corn)| 93.75% | 93.93%         | 93.75%  | 93.81% |
-| Tomato   | 94%      | 94.7%          | 94%     | 94.19% |
-| Potato   | 97.6%    | 97.7%          | 97.6%   | 97.6%  |
-| Rice     | 81.25%   | 81.8%          | 81.25%  | 81%    |
-# Usage
-Running a Prediction
+## 🌱 Supported plants and performance
 
-1. Start the API
-   Run the Flask application with:
-   `python api.py`
-   By default, the API runs on http://127.0.0.1:5000/
+| Plant | Classes | Accuracy | Precision | Recall | F1 | Detects |
+|---|:--:|:--:|:--:|:--:|:--:|---|
+| Apple | 7 | 98.19% | 98.2% | 98.19% | 98.18% | alternaria leaf spot, black rot, brown spot, gray spot, rust, scab, healthy |
+| Banana | 7 | 94% | 94% | 94% | 94% | bract mosaic virus, fungal infection, insect damage, Moko, Panama, Sigatoka, healthy |
+| Beans | 3 | 91.4% | 91.5% | 91.4% | 91.4% | angular leaf spot, bean rust, healthy |
+| Cassava | 5 | 85% | 85% | 85% | 85% | bacterial blight, brown streak, green mottle, mosaic, healthy |
+| Grape | 4 | 98.66% | 98.68% | 98.66% | 98.65% | black rot, Esca (black measles), leaf blight, healthy |
+| Groundnut | 5 | 86% | 86% | 86% | 86% | early leaf spot, late leaf spot, rust, nutrition deficiency, healthy |
+| Maize (Corn) | 4 | 93.75% | 93.93% | 93.75% | 93.81% | gray leaf spot, common rust, northern leaf blight, healthy |
+| Tomato | 10 | 94% | 94.7% | 94% | 94.19% | bacterial spot, early blight, late blight, leaf mold, Septoria, spider mites, target spot, yellow leaf curl virus, mosaic virus, healthy |
+| Potato | 3 | 97.6% | 97.7% | 97.6% | 97.6% | early blight, late blight, healthy |
+| Rice | 4 | 81.25% | 81.8% | 81.25% | 81% | brown spot, leaf blast, hispa, healthy |
 
-2. Sending a Prediction Request
-   Use a tool like Postman or curl to send a POST request to the `/predict` endpoint.
-   Request Format:
-   - URL: `http://127.0.0.1:5000/predict`
-   - Method: POST
-   - Form Data:
-      - plant: The plant type (e.g., "apple", "banana", etc.).
-      - file: The image file of the plant leaf.
+## 🧠 Model architecture
 
-**Example Using curl:**
-```json
-`curl -X POST "http://127.0.0.1:5000/predict" \
-     -F "plant=apple" \
-     -F "file=@path/to/image.jpg"`
+Each model is a **convolutional neural network (CNN)** built in TensorFlow for image classification, trained on public datasets with data augmentation to generalize to unseen images.
+
+<!-- TODO (optional): add dataset sizes, number of layers and image size per model if you want to document them -->
+
+## 🚀 Quick start
+
+```bash
+git clone https://github.com/Emdysuji/TerraLeaf-AI.git
+cd TerraLeaf-AI
+
+python -m venv .venv
+# Windows: .venv\Scripts\activate    |    Linux/macOS: source .venv/bin/activate
+
+pip install -r requirements.txt
 ```
 
-**Example Response:**
+<!-- TODO: requirements.txt was not in the repo file list. Add it, or replace the line above with: pip install flask tensorflow pillow numpy -->
+
+### Run the API
+
+```bash
+python API/api.py
+```
+
+<!-- TODO: confirm the real path/name of the API script inside the API folder -->
+
+By default it runs at `http://127.0.0.1:5000/`.
+
+### Make a prediction
+
+Send a `POST` request to `/predict` with form data:
+
+| Field | Description |
+|---|---|
+| `plant` | Plant type, e.g. `apple`, `banana`, `tomato` |
+| `file` | The leaf image |
+
+```bash
+curl -X POST "http://127.0.0.1:5000/predict" \
+     -F "plant=apple" \
+     -F "file=@path/to/image.jpg"
+```
+
+**Example response**
 
 ```json
 {
-    "plant": "apple",
-    "predictions": "Apple___black_rot",
-    "confidence": 0.95
+  "plant": "apple",
+  "predictions": "Apple___black_rot",
+  "confidence": 0.95
 }
 ```
 
-**Error Handling**
+**Errors** are returned as JSON:
 
-The API returns error messages in JSON format if there is an issue with the request:
-
-- Invalid plant type:
-  - ```json{"error": "Invalid plant type. Available options: [list of plants]"}```
-
-- No file provided:
-  - ```json{"error": "No file provided."}```
-
-- Processing error:
-  - ```json{"error": "Error details..."}```
-
-
-**Deployment**
-To deploy this API, you can:
-
-- Use a cloud service like AWS, GCP, or Azure.
-- Deploy with a web server like ` gunicorn`:
-    - ```json gunicorn -w 4 -b 0.0.0.0:5000 api:app```
-
-- Containerize with Docker:
 ```json
-{
+{"error": "Invalid plant type. Available options: [list of plants]"}
+{"error": "No file provided."}
+{"error": "Error details..."}
+```
+
+## 🐳 Deployment
+
+Run with gunicorn:
+
+```bash
+gunicorn -w 4 -b 0.0.0.0:5000 api:app
+```
+
+Or with Docker:
+
+```dockerfile
 FROM python:3.9
 WORKDIR /app
 COPY . .
 RUN pip install flask tensorflow pillow numpy
 CMD ["python", "api.py"]
-}
 ```
 
-# 🙌 Author
-*Michael-David Osuji*
-- 📍 Nigeria
-- 💼 Machine Learning & Automation Enthusiast
-- 🌐 LinkedIn (www.linkedin.com/in/michael-daivd-osuji-b1811a208)
-- 📬 Feel free to connect or contribute!
+## 📚 Dataset sources
 
-# ⭐️ Show Your Support
-If you like this project, give it a ⭐️ on GitHub and share it with others!
+| Plant | Source |
+|---|---|
+| Apple, Cassava | [Plant Diseases Training Dataset](https://www.kaggle.com/datasets/nirmalsankalana/plant-diseases-training-dataset) |
+| Banana | [Banana Disease Recognition Dataset](https://www.kaggle.com/datasets/sujaykapadnis/banana-disease-recognition-dataset), [BananaLSD](https://www.kaggle.com/datasets/armaanoajay/bananalsd) |
+| Beans | [Bean Disease Dataset](https://www.kaggle.com/datasets/therealoise/bean-disease-dataset) |
+| Grape, Maize, Tomato, Potato | [PlantVillage Dataset](https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset) |
+| Groundnut | [Groundnut Plant Leaf Data](https://www.kaggle.com/datasets/warcoder/groundnut-plant-leaf-data) |
+| Rice | [Rice Leaf Images](https://www.kaggle.com/datasets/nizorogbezuode/rice-leaf-images) |
 
+## 👤 Author
+
+**Michael-David Osuji**, AI Engineer · Nigeria
+[LinkedIn](https://www.linkedin.com/in/michael-david-osuji) · [GitHub](https://github.com/Emdysuji)
+
+<div align="center">
+
+⭐ If you like this project, give it a star and share it.
+
+</div>
